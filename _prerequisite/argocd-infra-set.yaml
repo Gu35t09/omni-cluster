@@ -11,7 +11,7 @@ spec:
       repoURL: https://github.com/Gu35t09/omni-cluster.git
       revision: main
       directories:
-      - path: apps/*
+      - path: infrastructure/*
   template:
     metadata:
       name: '{{.path.basename}}'
