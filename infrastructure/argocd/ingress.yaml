@@ -4,7 +4,7 @@ metadata:
   name: argocd
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/service.serverstransport: argocd-argocd-insecure-transport@kubernetescrd
+    traefik.ingress.kubernetes.io/service.serverstransport: argocd-argocd-insecure@kubernetescrd
 spec:
   rules:
   - host: argocd.omni.greyroom.net
