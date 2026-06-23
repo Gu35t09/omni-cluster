@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: omni-k8s-tls
+  namespace: omni
+spec:
+  secretName: omni-k8s-tls
+  issuerRef:
+    name: issuer-letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "kubernetes.omni.greyroom.net"
+  dnsNames:
+    - "kubernetes.omni.greyroom.net"

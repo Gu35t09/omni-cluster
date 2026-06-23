@@ -1,0 +1,66 @@
+omni:
+  config:
+    account:
+      id: 8a8c4c2a-19fb-4adb-ab0b-939b99fdddc9
+      name: my-omni
+    auth:
+      auth0:
+        enabled: false
+      oidc:
+        enabled: true
+        clientID: omni
+        clientSecret: $OMNI_CLIENT_SECRET
+        providerURL: https://dex.omni.greyroom.net
+        scopes:
+          - openid
+          - profile
+          - email
+      initialUsers:  # Initial users are created on the first startup of Omni. They are created with the "admin" role.
+        - admin@greyroom.net
+    services:
+      api:
+        advertisedURL: https://omni.greyroom.net
+      kubernetesProxy:
+        advertisedURL: https://kubernetes.omni.greyroom.net
+      machineAPI:
+        advertisedURL: https://siderolink.omni.greyroom.net
+      siderolink:
+        wireGuard:
+          # The externally accessible IP:port for WireGuard connections.
+          # If using an externally accessible node IP, the port should match
+          # service.wireguard.nodePort (default: 30180).
+          advertisedEndpoint: 192.168.100.211:30180
+  etcdEncryptionKey:
+    existingSecret: "omni-gpg-key"
+
+  ingress:
+    main:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt
+      className: traefik
+      host: omni.greyroom.net
+      tls:
+        - secretName: omni-tls
+          hosts:
+            - omni.greyroom.net
+    kubernetesProxy:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt
+      className: traefik
+      host: kubernetes.omni.greyroom.net
+      tls:
+        - secretName: omni-k8s-tls
+          hosts:
+            - kubernetes.
+    siderolinkApi:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt
+      className: traefik
+      host: siderolink.omni.greyroom.net
+      tls:
+        - secretName: omni-siderolink-tls
+          hosts:
+            - siderolink.omni.greyroom.net

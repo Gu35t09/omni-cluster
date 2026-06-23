@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: omni-siderolink-tls
+  namespace: omni
+spec:
+  secretName: omni-siderolink-tls
+  issuerRef:
+    name: issuer-letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "siderolink.omni.greyroom.net"
+  dnsNames:
+    - "siderolink.omni.greyroom.net"
