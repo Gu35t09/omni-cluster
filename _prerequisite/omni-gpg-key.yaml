@@ -1,3 +1,0 @@
-kubectl create secret generic omni-gpg-key \
-  --namespace omni \
-  --from-file=omni.asc

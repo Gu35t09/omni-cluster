@@ -1,4 +1,5 @@
 omni:
+  replicaCount: 1
   config:
     account:
       id: 8a8c4c2a-19fb-4adb-ab0b-939b99fdddc9
@@ -64,3 +65,20 @@ omni:
         - secretName: omni-siderolink-tls
           hosts:
             - siderolink.omni.greyroom.net
+
+    storage:
+      default:
+        kind: sqlite
+
+      sqlite:
+        path: /opt/omni/omni.db
+
+    extraVolumes:
+      - name: omni-data
+        hostPath:
+          path: /opt/omni
+          type: DirectoryOrCreate
+
+    extraVolumeMounts:
+      - name: omni-data
+        mountPath: /opt/omni
