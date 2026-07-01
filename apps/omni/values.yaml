@@ -38,7 +38,7 @@ omni:
     main:
       enabled: true
       annotations:
-        cert-manager.io/cluster-issuer: letsencrypt
+        cert-manager.io/cluster-issuer: issuer-letsencrypt-production
       className: traefik
       host: omni.greyroom.net
       tls:
@@ -48,7 +48,7 @@ omni:
     kubernetesProxy:
       enabled: true
       annotations:
-        cert-manager.io/cluster-issuer: letsencrypt
+        cert-manager.io/cluster-issuer: issuer-letsencrypt-production
       className: traefik
       host: kubernetes.omni.greyroom.net
       tls:
@@ -58,7 +58,7 @@ omni:
     siderolinkApi:
       enabled: true
       annotations:
-        cert-manager.io/cluster-issuer: letsencrypt
+        cert-manager.io/cluster-issuer: issuer-letsencrypt-production
       className: traefik
       host: siderolink.omni.greyroom.net
       tls:
