@@ -242,7 +242,7 @@ dex:
 
       # -- Ingress TLS configuration.
       # @default -- See [values.yaml](values.yaml).
-      tls: [] ## MODIFIED
+      tls: ## MODIFIED
         - secretName: dex-certificates-greyroom-net-production ## MODIFIED
           hosts: ## MODIFIED
             - dex.omni.greyroom.net## MODIFIED
