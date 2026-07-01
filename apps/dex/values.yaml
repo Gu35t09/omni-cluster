@@ -107,18 +107,18 @@ dex:
 
     # -- Similar to env but with support for all possible configurations.
     # See the [API reference](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#environment-variables) for details.
-    envVars: []  ## MODIFIED
-    - name: OMNI_CLIENT_SECRET
-      valueFrom:
-        secretKeyRef:
-          name: dex-secrets
-          key: OMNI_CLIENT_SECRET
+    envVars: ## MODIFIED
+      - name: OMNI_CLIENT_SECRET
+        valueFrom:
+          secretKeyRef:
+            name: dex-secrets
+            key: OMNI_CLIENT_SECRET
 
-    - name: OMNI_PASSWORD_HASH
-      valueFrom:
-        secretKeyRef:
-          name: dex-secrets
-          key: OMNI_PASSWORD_HASH
+      - name: OMNI_PASSWORD_HASH
+        valueFrom:
+          secretKeyRef:
+            name: dex-secrets
+            key: OMNI_PASSWORD_HASH
 
     serviceAccount:
       # -- Enable service account creation.
