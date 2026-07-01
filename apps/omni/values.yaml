@@ -54,7 +54,7 @@ omni:
       tls:
         - secretName: omni-k8s-tls
           hosts:
-            - kubernetes.greyroom.net
+            - kubernetes.omni.greyroom.net
     siderolinkApi:
       enabled: true
       annotations:
