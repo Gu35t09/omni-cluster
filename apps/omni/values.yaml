@@ -82,3 +82,6 @@ omni:
   extraVolumeMounts:
     - name: omni-data
       mountPath: /opt/omni
+
+  persistence:
+    enabled: false
