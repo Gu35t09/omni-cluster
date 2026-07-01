@@ -79,7 +79,7 @@ dex:
     staticClients:
       - name: Omni
         id: omni
-        secret: $OMNI_CLIENT_SECRET
+        secret: '{{`{{ .Env.OMNI_CLIENT_SECRET }}`}}'
         redirectURIs:
           - "https://omni.greyroom.net/oidc/consume"
 
@@ -87,7 +87,7 @@ dex:
       - email: "admin@greyroom.net"
         username: "admin"
         preferredUsername: "admin"
-        hash: $OMNI_PASSWORD_HASH
+        hash: '{{`{{ .Env.OMNI_PASSWORD_HASH }}`}}'
 
   # -- Additional storage [volumes](https://kubernetes.io/docs/concepts/storage/volumes/).
   # See the [API reference](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#volumes-1) for details.
