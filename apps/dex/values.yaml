@@ -41,7 +41,7 @@ dex:
 
   https:
     # -- Enable the HTTPS endpoint.issuer
-    enabled: true ## MODIFIED
+    enabled: false
 
   grpc:
     # -- Enable the gRPC endpoint.
