@@ -85,3 +85,10 @@ omni:
 
   persistence:
     enabled: false
+  
+  envVars:
+    - name: OMNI_CLIENT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: omni-client-secret
+          key: OMNI_CLIENT_SECRET
