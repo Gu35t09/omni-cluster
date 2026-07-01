@@ -217,7 +217,7 @@ dex:
     tls: ## MODIFIED
       - secretName: dex-certificates-greyroom-net-production ## MODIFIED
         hosts: ## MODIFIED
-          - dex.omni.greyroom.net## MODIFIED
+          - dex.omni.greyroom.net ## MODIFIED
 
   httpRoute:
     # -- Enable Gateway API HTTPRoute.
