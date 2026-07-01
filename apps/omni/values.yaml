@@ -86,7 +86,7 @@ omni:
   persistence:
     enabled: false
   
-  envVars:
+  envFrom:
     - name: OMNI_CLIENT_SECRET
       valueFrom:
         secretKeyRef:
