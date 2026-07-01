@@ -66,19 +66,19 @@ omni:
           hosts:
             - siderolink.omni.greyroom.net
 
-    storage:
-      default:
-        kind: sqlite
+  storage:
+    default:
+      kind: sqlite
 
-      sqlite:
-        path: /opt/omni/omni.db
+    sqlite:
+      path: /opt/omni/omni.db
 
-    extraVolumes:
-      - name: omni-data
-        hostPath:
-          path: /opt/omni
-          type: DirectoryOrCreate
+  extraVolumes:
+    - name: omni-data
+      hostPath:
+        path: /opt/omni
+        type: DirectoryOrCreate
 
-    extraVolumeMounts:
-      - name: omni-data
-        mountPath: /opt/omni
+  extraVolumeMounts:
+    - name: omni-data
+      mountPath: /opt/omni
